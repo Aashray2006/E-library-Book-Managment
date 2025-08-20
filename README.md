@@ -1,102 +1,105 @@
-📚 E-Library Book Management (C++)
-This is a console-based E-Library Book Management system built in C++. It simulates a simple library, allowing you to manage a collection of books. The key feature is the "undo" functionality for borrow and return actions, implemented using a stack.
-
 ⚙️ Core Concepts & Features
-Book Inventory: The library's collection is stored and managed using a doubly linked list. This allows for efficient addition and removal of books.
+Book Inventory: The library's collection is stored and managed using a Python list or a dictionary, offering efficient addition and removal of books.
 
 Borrow/Return Functionality: Users can borrow or return books, which updates the book's availability status.
 
-Undo/Redo Actions: A stack is used to store recent borrow/return actions. You can undo the last action, which reverts the book's status and updates the inventory.
+Undo/Redo Actions: A Python list is used to simulate a stack to store recent borrow/return actions. You can undo the last action, which reverts the book's status and updates the inventory.
 
 Search & Filter: Easily find books by title or author. The search functionality is not case-sensitive.
 
-Data Persistence: The book inventory is saved to and loaded from a file (books.txt), so your data is preserved between sessions.
+Data Persistence: The book inventory is saved to and loaded from a file (e.g., books.json or books.txt), so your data is preserved between sessions.
 
 🚀 How to Run
-Prerequisites: Ensure you have a C++ compiler (like g++).
+Prerequisites: Ensure you have Python installed on your system.
 
-Compilation:
-
-Navigate to the src directory in your terminal.
-
-Compile the source code:
-
-Bash
-
-g++ main.cpp -o e-library
 Execution:
 
-Run the compiled executable:
+Save the Python code in a file (e.g., e_library.py).
+
+Open your terminal or command prompt.
+
+Run the script with the following command:
 
 Bash
 
-./e-library
+python e_library.py
 Follow the on-screen menu to interact with the library system.
 
 📋 Sample Output
 When you run the application for the first time, it will start with an empty list.
 
-Welcome to your To-Do List Manager!
+Welcome to the E-Library!
 
 --- Main Menu ---
-1. View all tasks
-2. Add a new task
-3. Mark a task as complete
-4. Delete a task
-5. Exit
-Enter your choice: 2
-Enter the new task description: Go for a run at the park
-Task successfully added.
-
---- Main Menu ---
-1. View all tasks
-2. Add a new task
-3. Mark a task as complete
-4. Delete a task
-5. Exit
-Enter your choice: 2
-Enter the new task description: Prepare for the meeting tomorrow
-Task successfully added.
-
---- Main Menu ---
-1. View all tasks
-2. Add a new task
-3. Mark a task as complete
-4. Delete a task
-5. Exit
+1. Add a book
+2. View all books
+3. Borrow a book
+4. Return a book
+5. Undo last action
+6. Search for a book
+7. Exit
 Enter your choice: 1
-
---- Your Tasks ---
-1. [ ] Go for a run at the park
-2. [ ] Prepare for the meeting tomorrow
+Enter book title: The Hitchhiker's Guide to the Galaxy
+Enter author name: Douglas Adams
+Book "The Hitchhiker's Guide to the Galaxy" added successfully.
 
 --- Main Menu ---
-1. View all tasks
-2. Add a new task
-3. Mark a task as complete
-4. Delete a task
-5. Exit
+1. Add a book
+2. View all books
+3. Borrow a book
+4. Return a book
+5. Undo last action
+6. Search for a book
+7. Exit
+Enter your choice: 2
+
+--- All Books ---
+Title: The Hitchhiker's Guide to the Galaxy, Author: Douglas Adams, Status: Available
+
+--- Main Menu ---
+1. Add a book
+2. View all books
+3. Borrow a book
+4. Return a book
+5. Undo last action
+6. Search for a book
+7. Exit
 Enter your choice: 3
-Enter the number of the task to mark as complete: 1
-Task #1 marked as complete.
+Enter the title of the book to borrow: The Hitchhiker's Guide to the Galaxy
+Book "The Hitchhiker's Guide to the Galaxy" borrowed successfully.
 
 --- Main Menu ---
-1. View all tasks
-2. Add a new task
-3. Mark a task as complete
-4. Delete a task
-5. Exit
-Enter your choice: 1
+1. Add a book
+2. View all books
+3. Borrow a book
+4. Return a book
+5. Undo last action
+6. Search for a book
+7. Exit
+Enter your choice: 2
 
---- Your Tasks ---
-1. [x] Go for a run at the park
-2. [ ] Prepare for the meeting tomorrow
+--- All Books ---
+Title: The Hitchhiker's Guide to the Galaxy, Author: Douglas Adams, Status: Borrowed
 
 --- Main Menu ---
-1. View all tasks
-2. Add a new task
-3. Mark a task as complete
-4. Delete a task
-5. Exit
+1. Add a book
+2. View all books
+3. Borrow a book
+4. Return a book
+5. Undo last action
+6. Search for a book
+7. Exit
 Enter your choice: 5
-Goodbye! Your tasks have been saved.
+Undoing last action...
+Action undone. The book "The Hitchhiker's Guide to the Galaxy" is now Available.
+
+--- Main Menu ---
+1. Add a book
+2. View all books
+3. Borrow a book
+4. Return a book
+5. Undo last action
+6. Search for a book
+7. Exit
+Enter your choice: 7
+Goodbye! Your book inventory has been saved.
